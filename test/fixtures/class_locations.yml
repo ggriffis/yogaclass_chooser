@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  place: MyString
+  close: false
+  close_parking: false
+  free_parking: false
+
+two:
+  place: MyString
+  close: false
+  close_parking: false
+  free_parking: false

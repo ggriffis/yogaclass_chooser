@@ -1,0 +1,39 @@
+<%= form_for(@yoga_class) do |f| %>
+  <% if @yoga_class.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@yoga_class.errors.count, "error") %> prohibited this yoga_class from being saved:</h2>
+
+      <ul>
+      <% @yoga_class.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :time_of_day %><br />
+    <%= f.time_select :time_of_day, prompt: {hour: 'Choose hour', minute: 'Choose minute'} %>
+  </div>
+  <div class="field">
+    <%= f.label :day_of_week %><br />
+    <%= f.select :day_of_week, Date::DAYNAMES %>
+  </div>
+  <div class="field">
+    <%= f.label :duration, "Duration in Hours" %><br />
+    <%= f.text_field :duration %>
+  </div>
+  <div class="field">
+    <%= f.label :good_time, "Good time of day?" %><br />
+    <%= f.check_box :good_time %>
+  </div>
+  <%= f.label :class_location_id %>
+  <%= f.select :class_location_id, ClassLocation.order("place").map {|e| [e.place, e.id]}, {include_blank: true} %>
+  <%= f.label :teacher_id %>
+  <%= f.select :teacher_id, Teacher.order("name").map {|e| [e.name, e.id]}, {include_blank: true} %>
+  <%= f.label :class_type_id %>
+  <%= f.select :class_type_id, ClassType.order("name").map {|e| [e.name, e.id]}, {include_blank: true} %><br /><br />
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

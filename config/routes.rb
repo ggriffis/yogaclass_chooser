@@ -1,4 +1,18 @@
 YogaclassChooser::Application.routes.draw do
+  root to: "yoga_classes#index"
+
+  resources :class_types
+
+
+  resources :teachers
+
+
+  resources :class_locations
+
+
+  resources :yoga_classes
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

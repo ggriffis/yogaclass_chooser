@@ -1,0 +1,33 @@
+<%= form_for(@class_location) do |f| %>
+  <% if @class_location.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@class_location.errors.count, "error") %> prohibited this class_location from being saved:</h2>
+
+      <ul>
+      <% @class_location.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :place %><br />
+    <%= f.text_field :place %>
+  </div>
+  <div class="field">
+    <%= f.label :close %><br />
+    <%= f.check_box :close %>
+  </div>
+  <div class="field">
+    <%= f.label :close_parking %><br />
+    <%= f.check_box :close_parking %>
+  </div>
+  <div class="field">
+    <%= f.label :free_parking %><br />
+    <%= f.check_box :free_parking %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

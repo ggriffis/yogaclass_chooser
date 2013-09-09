@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Place:</b>
+  <%= @class_location.place %>
+</p>
+
+<p>
+  <b>Close:</b>
+  <%= @class_location.close %>
+</p>
+
+<p>
+  <b>Close parking:</b>
+  <%= @class_location.close_parking %>
+</p>
+
+<p>
+  <b>Free parking:</b>
+  <%= @class_location.free_parking %>
+</p>
+
+
+<%= link_to 'Edit', edit_class_location_path(@class_location) %> |
+<%= link_to 'Back', class_locations_path %>

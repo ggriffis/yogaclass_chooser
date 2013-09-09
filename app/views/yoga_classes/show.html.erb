@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Time of day:</b>
+  <%= @yoga_class.time_of_day %>
+</p>
+
+<p>
+  <b>Day of week:</b>
+  <%= @yoga_class.day_of_week %>
+</p>
+
+<p>
+  <b>Duration</b>
+  <%= @yoga_class.duration %>
+</p>
+
+<p>
+  <b>Good time of day?:</b>
+  <%= @yoga_class.good_time %>
+</p>
+
+<p>
+  <b>Teacher</b>
+  <%= @yoga_class.teacher %>
+</p>
+
+<p>
+  <b>Class Location</b>
+  <%= @yoga_class.class_location %>
+</p>
+
+<p>
+  <b>Class Type</b>
+  <%= @yoga_class.class_type %>
+</p>
+
+
+<%= link_to 'Edit', edit_yoga_class_path(@yoga_class) %> |
+<%= link_to 'Back', yoga_classes_path %>

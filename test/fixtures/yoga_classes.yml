@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  time_of_day: 2013-09-09 10:21:37
+  day: 
+
+two:
+  time_of_day: 2013-09-09 10:21:37
+  day: 
