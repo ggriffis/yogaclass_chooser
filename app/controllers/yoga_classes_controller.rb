@@ -2,9 +2,9 @@ class YogaClassesController < ApplicationController
   # GET /yoga_classes
   # GET /yoga_classes.json
   def index
-
     if params[:search_day].present?
-      @yoga_classes = YogaClass.search_day(params[:search_day])
+      tod_params = params.keys.select { |e| e.slice(0,3) == "tod" }
+      @yoga_classes = YogaClass.search_day(params[:search_day], tod_params)
     else
       @yoga_classes = YogaClass.all.sort_by { |c| [ c.day_number, c.time_of_day ] }
     end
