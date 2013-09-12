@@ -1,29 +1,29 @@
 <h1>Listing Class Locations</h1>
-
-<table>
-  <tr>
-    <th>Place</th>
-    <th>Close</th>
-    <th>Close parking</th>
-    <th>Free parking</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @class_locations.each do |class_location| %>
-  <tr>
-    <td><%= class_location.place %></td>
-    <td><%= class_location.close %></td>
-    <td><%= class_location.close_parking %></td>
-    <td><%= class_location.free_parking %></td>
-    <td><%= link_to 'Show', class_location %></td>
-    <td><%= link_to 'Edit', edit_class_location_path(class_location) %></td>
-    <td><%= link_to 'Destroy', class_location, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
 <%= link_to 'New Class location', new_class_location_path %>
+
+<table class = "table table-striped">
+  <thead>
+    <tr>
+      <th>Place</th>
+      <th>Close</th>
+      <th>Close parking</th>
+      <th>Free parking</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @class_locations.each do |class_location| %>
+      <tr>
+        <td><%= class_location.place %></td>
+        <td><%= class_location.close %></td>
+        <td><%= class_location.close_parking %></td>
+        <td><%= class_location.free_parking %></td>
+        <td><%= link_to 'Show', class_location %></td>
+        <td><%= link_to 'Edit', edit_class_location_path(class_location) %></td>
+        <td><%= link_to 'Destroy', class_location, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

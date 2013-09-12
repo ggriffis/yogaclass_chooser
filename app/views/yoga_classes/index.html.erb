@@ -4,7 +4,8 @@
     <%= render :partial => 'search_classes' %>
 </div>
 <div>
-    <%= link_to "View all classes", yoga_classes_path, class: "btn btn-link" %>
+  <%= link_to "View all classes", yoga_classes_path, class: "btn btn-link" %>
+  <%= link_to 'New Yoga class', new_yoga_class_path, class: "btn btn-link" %><br>
 </div>
 
 <table class="table table-striped">
@@ -18,6 +19,7 @@
       <th>Location</th>
       <th>Type</th>
       <th>Favorite?</th>
+      <th>Like?</th>
       <th></th>
       <th></th>
       <th></th>
@@ -34,6 +36,7 @@
         <td><%= yoga_class.class_location %></td>
         <td><%= yoga_class.class_type %></td>
         <td><%= yoga_class.favorite? %></td>
+        <td><%= yoga_class.like? %></td>
         <td><%= link_to 'Show', yoga_class %></td>
         <td><%= link_to 'Edit', edit_yoga_class_path(yoga_class) %></td>
         <td><%= link_to 'Destroy', yoga_class, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -41,10 +44,3 @@
     <% end %>
   </tbody>
 </table>
-
-<br />
-
-<%= link_to 'New Yoga class', new_yoga_class_path %><br>
-<%= link_to "Class Locations", class_locations_path %>
-<%= link_to "Teachers", teachers_path %>
-<%= link_to "Class Types", class_types_path %>
