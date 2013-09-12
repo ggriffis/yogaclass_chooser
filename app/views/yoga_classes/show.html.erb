@@ -35,6 +35,11 @@
   <%= @yoga_class.class_type %>
 </p>
 
+<p>
+  <b>Favorite?</b>
+  <%= @yoga_class.favorite? %>
+</p>
+
 
 <%= link_to 'Edit', edit_yoga_class_path(@yoga_class) %> |
 <%= link_to 'Back', yoga_classes_path %>

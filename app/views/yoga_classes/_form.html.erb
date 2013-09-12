@@ -27,6 +27,10 @@
     <%= f.label :good_time, "Good time of day?" %><br />
     <%= f.check_box :good_time %>
   </div>
+  <div class="field">
+    <%= f.label :favorite %><br />
+    <%= f.check_box :favorite %>
+  </div>
   <%= f.label :class_location_id %>
   <%= f.select :class_location_id, ClassLocation.order("place").map {|e| [e.place, e.id]}, {include_blank: true} %>
   <%= f.label :teacher_id %>

@@ -4,7 +4,7 @@ class YogaClassesController < ApplicationController
   def index
     if params[:search_day].present?
       tod_params = params.keys.select { |e| e.slice(0,3) == "tod" }
-      @yoga_classes = YogaClass.search_day(params[:search_day], tod_params)
+      @yoga_classes = YogaClass.search_day(params[:search_day], tod_params, params[:search_type])
     else
       @yoga_classes = YogaClass.all.sort_by { |c| [ c.day_number, c.time_of_day ] }
     end

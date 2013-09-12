@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130909192557) do
+ActiveRecord::Schema.define(:version => 20130912055851) do
 
   create_table "class_locations", :force => true do |t|
     t.string   "place"
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(:version => 20130909192557) do
     t.datetime "updated_at",        :null => false
     t.boolean  "good_time"
     t.float    "duration"
+    t.boolean  "favorite"
   end
 
 end
