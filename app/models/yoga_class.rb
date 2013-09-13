@@ -11,7 +11,7 @@ class YogaClass < ActiveRecord::Base
       "tod_early_morning" => (0...9),
       "tod_morning" => (9...11),
       "tod_noonish" => (11...14),
-      "tod_afteroon_early_evening" => (14...17),
+      "tod_afternoon_early_evening" => (14...17),
       "tod_evening" => (17..23)
     }
   end
