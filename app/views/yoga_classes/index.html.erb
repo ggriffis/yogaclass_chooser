@@ -20,6 +20,7 @@
       <th>Type</th>
       <th>Favorite?</th>
       <th>Like?</th>
+      <th>Class Notes</th>
       <th></th>
       <th></th>
       <th></th>
@@ -37,6 +38,7 @@
         <td><%= yoga_class.class_type %></td>
         <td><%= yoga_class.favorite? %></td>
         <td><%= yoga_class.like? %></td>
+        <td><%= yoga_class.class_notes %></td>
         <td><%= link_to 'Show', yoga_class %></td>
         <td><%= link_to 'Edit', edit_yoga_class_path(yoga_class) %></td>
         <td><%= link_to 'Destroy', yoga_class, method: :delete, data: { confirm: 'Are you sure?' } %></td>
