@@ -32,6 +32,9 @@ class YogaClass < ActiveRecord::Base
         if e.class_location.close_parking? then search_array << e end
         if e.class_location.free_parking? then search_array << e end
         if e.teacher.like? then search_array << e end
+        if e.teacher.not_my_favorite?
+          search_array.delete_at search_array.index(e) unless search_array.index(e).nil?
+        end
         if e.class_type.like? then search_array << e end
         if e.like? then search_array << e end
         if e.favorite?

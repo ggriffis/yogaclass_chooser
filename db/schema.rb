@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130912210833) do
+ActiveRecord::Schema.define(:version => 20131005210501) do
 
   create_table "class_locations", :force => true do |t|
     t.string   "place"
@@ -33,8 +33,9 @@ ActiveRecord::Schema.define(:version => 20130912210833) do
   create_table "teachers", :force => true do |t|
     t.string   "name"
     t.boolean  "like"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+    t.boolean  "not_my_favorite"
   end
 
   create_table "yoga_classes", :force => true do |t|

@@ -6,6 +6,7 @@
     <tr>
       <th>Name</th>
       <th>Like</th>
+      <th>Not my Favorite</th>
       <th></th>
       <th></th>
       <th></th>
@@ -16,6 +17,7 @@
       <tr>
         <td><%= teacher.name %></td>
         <td><%= teacher.like %></td>
+        <td><%= teacher.not_my_favorite %></td>
         <td><%= link_to 'Show', teacher %></td>
         <td><%= link_to 'Edit', edit_teacher_path(teacher) %></td>
         <td><%= link_to 'Destroy', teacher, method: :delete, data: { confirm: 'Are you sure?' } %></td>
