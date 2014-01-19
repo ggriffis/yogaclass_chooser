@@ -1,5 +1,5 @@
 <%= form_tag yoga_classes_path, :method => 'get' do %>
-    <%= select_tag :search_day, options_for_select(Date::DAYNAMES, @search_day) %>
+    <%= select_tag :search_day, options_for_select(Date::DAYNAMES, @search_day), :prompt => 'All' %>
     <%= select_tag :search_type, options_for_select(ClassType.class_categories, @type_of_class), :prompt => 'All' %>
     <%= submit_tag "Choose a Class for Me", :name => nil %></div>
     <%= check_box_tag :tod_early_morning, 1, @times_of_day.include?("tod_early_morning") %>

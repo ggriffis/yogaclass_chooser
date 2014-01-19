@@ -30,7 +30,7 @@ class YogaClass < ActiveRecord::Base
         if (e.good_time) then search_array << e end
         if e.class_location.close? then search_array << e end
         if e.class_location.close_parking? then search_array << e end
-        if e.class_location.free_parking? then search_array << e end
+        if (e.class_location.free_parking? || day == "Sunday") then search_array << e end
         if !e.teacher.nil?
           if e.teacher.like? then search_array << e end
           if e.teacher.not_my_favorite?

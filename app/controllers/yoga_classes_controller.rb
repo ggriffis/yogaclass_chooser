@@ -9,6 +9,7 @@ class YogaClassesController < ApplicationController
       @times_of_day = tod_params
       @type_of_class = params[:search_type]
     else
+      @times_of_day = Array.new
       @yoga_classes = YogaClass.all.sort_by { |c| [ c.day_number, c.time_of_day ] }
     end
 
