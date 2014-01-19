@@ -1,15 +1,15 @@
 <%= form_tag yoga_classes_path, :method => 'get' do %>
-    <%= select_tag :search_day, options_for_select(Date::DAYNAMES) %>
-    <%= select_tag :search_type, options_for_select(ClassType.class_categories), :prompt => 'All' %>
+    <%= select_tag :search_day, options_for_select(Date::DAYNAMES, @search_day) %>
+    <%= select_tag :search_type, options_for_select(ClassType.class_categories, @type_of_class), :prompt => 'All' %>
     <%= submit_tag "Choose a Class for Me", :name => nil %></div>
-    <%= check_box_tag :tod_early_morning %>
+    <%= check_box_tag :tod_early_morning, 1, @times_of_day.include?("tod_early_morning") %>
     <%= label_tag :tod_early_morning, "Early Morning", {class: "checkbox inline"} %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <%= check_box_tag :tod_morning  %>
+    <%= check_box_tag :tod_morning, 1, @times_of_day.include?("tod_early_morning") %>
     <%= label_tag :tod_morning, "Morning", {class: "checkbox inline"}  %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <%= check_box_tag :tod_noonish %>
+    <%= check_box_tag :tod_noonish, 1, @times_of_day.include?("tod_noonish") %>
     <%= label_tag :tod_noonish, "Noonish", {class: "checkbox inline"}  %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <%= check_box_tag :tod_afternoon_early_evening %>
+    <%= check_box_tag :tod_afternoon_early_evening, 1, @times_of_day.include?("tod_afternoon_early_evening") %>
     <%= label_tag :tod_afternoon_early_evening, "Afternoon/Early Evening", {class: "checkbox inline"}  %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <%= check_box_tag :tod_evening %>
+    <%= check_box_tag :tod_evening, 1, @times_of_day.include?("tod_evening") %>
     <%= label_tag :tod_evening, "Evening", {class: "checkbox inline"}  %>
 <% end %>

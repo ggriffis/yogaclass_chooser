@@ -19,7 +19,7 @@
     <div class="span12">
       <div class="field">
         <%= f.label :time_of_day %>
-        <%= f.time_select :time_of_day, prompt: {hour: 'Choose hour', minute: 'Choose minute'} %>
+        <%= f.time_select :time_of_day, prompt: {hour: 'Choose hour', minute: 'Choose minute'}, minute_step: 5 %>
       </div>
     </div>
   </div>
